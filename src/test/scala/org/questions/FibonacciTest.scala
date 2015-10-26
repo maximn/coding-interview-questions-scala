@@ -13,6 +13,12 @@ import scala.concurrent.{Await, Future}
 trait FibonacciTest extends Specification {
   val fib: Fibonacci
 
+  "negative input" should {
+    "be invalid" in {
+      fib.nth(-1) must throwA[IllegalArgumentException]
+    }
+  }
+
   "0th" should {
     "be 0" in {
       fib.nth(0) must be_===(0)
