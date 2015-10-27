@@ -1,13 +1,13 @@
 package org.questions.fibonacci
 
-import scala.annotation.tailrec
-
 /**
  * @author maximn
  * @since 26-Oct-2015
  */
 class Iterative extends Fibonacci {
    override def nth(n: Int): Long = {
+     require(n >= 0)
+
      var current = 0
      var temp = 1
 
