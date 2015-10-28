@@ -45,11 +45,12 @@ class DynamicProgrammingImmutable extends ArrayMaxSumNonConsecutive {
     @tailrec
     def inner(numbers: Seq[Int], inclusive: Int, exclusive: Int): Int = numbers match {
       case Nil => math.max(inclusive, exclusive)
-      case head :: tail => inner(numbers.tail, numbers.head + exclusive, inclusive )
+      case head :: tail => inner(numbers.tail, numbers.head + exclusive, inclusive)
     }
 
-    if (numbers.isEmpty) return 0
-
-    inner(numbers.tail, numbers.head, 0)
+    if (numbers.nonEmpty)
+      inner(numbers.tail, numbers.head, 0)
+    else
+      0
   }
 }
