@@ -9,11 +9,12 @@ class Iterative extends Fibonacci {
      require(n >= 0)
 
      var current = 0
-     var temp = 1
+     var last = 1
 
      for (i <- 0 until n) {
-       current = temp
-       temp = current + temp
+       val temp = current
+       current = last
+       last = current + temp
      }
 
      current
