@@ -7,3 +7,7 @@ Example :
 
 #TwoSum
 Given an array, find a pair in the array that would add up to the given sum.
+
+
+#LongestIncreasing
+Given an array of integers, find the longest increasing sub-sequence.
