@@ -17,16 +17,9 @@ class CharsCanvas(canvas: Array[Array[Char]] = Array.fill[Char](5, 5)('.')) exte
   require(canvas.length > 0)
   require(canvas.head.length > 0)
 
-  override def getColor(x: Int, y: Int): Char = canvas(y)(x)
+  override def getColor(x: Int, y: Int): Char = canvas(x)(y)
 
-  override def setColor(x: Int, y: Int, color: Char): Unit = canvas(y)(x) = color
+  override def setColor(x: Int, y: Int, color: Char): Unit = canvas(x)(y) = color
 
-  override def getSize: (Int, Int) = (canvas.head.length, canvas.length)
-
-  def print() = {
-    canvas foreach { row => {
-      row.foreach(Predef.print)
-      println()
-    }}
-  }
+  override def getSize: (Int, Int) = (canvas.length, canvas.head.length)
 }
