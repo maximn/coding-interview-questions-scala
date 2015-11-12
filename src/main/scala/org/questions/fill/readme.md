@@ -13,4 +13,4 @@ trait Canvas {
   def setColor(x: Int, y: Int, color: Char)
   def getSize: (Int, Int)
 }
-```fill
+```
