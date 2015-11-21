@@ -10,18 +10,23 @@ class DrawUtils(canvas: Canvas) {
 
     val initialColor = canvas.getColor(x, y)
 
-    canvas.setColor(x, y, color)
+    fillInternal(x, y, color, initialColor)
+  }
 
-    Seq((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)) foreach { case (i, j) =>
-      if (isInCanvas(i, j) && canvas.getColor(i, j) == initialColor) {
-        fill(i, j, color)
+  private def fillInternal(x: Int, y: Int, newColor: Char, initialColor: Char): Unit = {
+    def shouldColor = canvas.getColor(x, y) == initialColor
+    if (isInCanvas(x, y) && shouldColor) {
+      canvas.setColor(x, y, newColor)
+
+      Seq((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)) foreach { case (i, j) =>
+        fillInternal(i, j, newColor, initialColor)
       }
     }
   }
 
   private def isInCanvas(x: Int, y: Int): Boolean =
     (x >= 0) &&
-    (y >= 0) &&
-    (x < canvas.getSize._1) &&
-    (y < canvas.getSize._2)
+      (y >= 0) &&
+      (x < canvas.getSize._1) &&
+      (y < canvas.getSize._2)
 }
