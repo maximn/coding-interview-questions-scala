@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/maximn/coding-interview-questions-scala/badge.svg?branch=master&service=github)](https://coveralls.io/github/maximn/coding-interview-questions-scala?branch=master)
 
 # coding-interview-questions
-Coding interview questions with solutions and tests (Scala)
+## Coding interview questions with solutions and tests (Scala)
 
 
 ## Questions -
