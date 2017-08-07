@@ -35,7 +35,7 @@ trait FibonacciTest extends Specification with FibonacciProperty {
 
   "2nd" should {
     "be 1" in {
-      fib.nth(1) must be_===(1)
+      fib.nth(2) must be_===(1)
     }
   }
 }
