@@ -20,7 +20,8 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
-
+# Build Server Protocol
+.bsp/
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio

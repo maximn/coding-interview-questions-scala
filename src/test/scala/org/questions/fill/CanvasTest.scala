@@ -19,7 +19,7 @@ class CanvasTest extends Specification {
         |...*****....""".stripMargin
 
     private def toCharsCanvas(s: String) =
-      new CharsCanvas(s.lines.map(_.toCharArray).toArray)
+      new CharsCanvas(s.split("\n").map(_.toCharArray))
 
     val canvas = toCharsCanvas(sample)
     val drawUtils = new DrawUtils(canvas)
