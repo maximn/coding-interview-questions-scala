@@ -3,6 +3,11 @@ package org.questions.arrays
 import scala.annotation.tailrec
 
 /**
+ * Find the highest sum of non-consecutive numbers in an array.
+ *
+ * This algorithm assumes all numbers are non-negative (>= 0). With negative numbers, the problem becomes more complex
+ * as the optimal strategy may involve skipping multiple consecutive negative values.
+ *
  * @author
  *   maximn
  * @since 28-Oct-2015
