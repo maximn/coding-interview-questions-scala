@@ -1,5 +1,8 @@
 # ArrayMaxSumNonConsecutive
-Given an array of numbers, find the highest sum of non-consecutive numbers.
+Given an array of non-negative numbers, find the highest sum of non-consecutive numbers.
+
+**Note**: This algorithm assumes all numbers are non-negative (>= 0). With negative numbers, the problem becomes more complex as the optimal strategy may involve skipping multiple consecutive negative values.
+
 Example :
 [1, 2, 3, 4, 5]
  !     !     !

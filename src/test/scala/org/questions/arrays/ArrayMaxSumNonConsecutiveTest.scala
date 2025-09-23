@@ -27,6 +27,10 @@ trait ArrayMaxSumNonConsecutiveTest extends Specification {
     "be the Max Sum of non consecutive numbers" in {
       accumulator.maxSum(Seq(1, 2, 3, 4, 5)) must be_==(9)
     }
+
+    "work correctly with non-negative numbers only" in {
+      accumulator.maxSum(Seq(0, 1, 2, 3)) must be_==(4)
+    }
   }
 }
 
