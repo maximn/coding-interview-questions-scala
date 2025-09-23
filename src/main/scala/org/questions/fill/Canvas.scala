@@ -7,7 +7,7 @@ package org.questions.fill
 trait Canvas {
   def getColor(x: Int, y: Int): Char
 
-  def setColor(x: Int, y: Int, color: Char)
+  def setColor(x: Int, y: Int, color: Char): Unit
 
   def getSize: (Int, Int)
 }

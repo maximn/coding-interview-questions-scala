@@ -23,19 +23,19 @@ trait FibonacciTest extends Specification with FibonacciProperty {
 
   "0th" should {
     "be 0" in {
-      fib.nth(0) must be_===(0)
+      fib.nth(0) must be_==(0)
     }
   }
 
   "1st" should {
     "be 1" in {
-      fib.nth(1) must be_===(1)
+      fib.nth(1) must be_==(1)
     }
   }
 
   "2nd" should {
     "be 1" in {
-      fib.nth(2) must be_===(1)
+      fib.nth(2) must be_==(1)
     }
   }
 }
@@ -62,8 +62,8 @@ trait FibonacciProperty extends ScalaCheck {
   val smallInteger = Gen.choose[Int](2,30)
 
   "fib(n)" should {
-    "be equal to the sum of the results of last 2 elements" >> prop { n: Int =>
-      fib.nth(n) must be_===(fib.nth(n - 1) + fib.nth(n - 2))
+    "be equal to the sum of the results of last 2 elements" >> prop { (n: Int) =>
+      fib.nth(n) must be_==(fib.nth(n - 1) + fib.nth(n - 2))
     }.setGen(smallInteger)
   }
 }

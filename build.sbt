@@ -1,12 +1,28 @@
 name := "coding-interview-questions"
 
-version := "1.0"
+version := "2.0.0"
 
-scalaVersion := "2.13.12"
+scalaVersion := "3.3.6"
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % "4.20.5" % "test",
-  "org.specs2" %% "specs2-scalacheck" % "4.20.5" % "test"
+  "org.specs2" %% "specs2-core" % "4.20.8" % Test,
+  "org.specs2" %% "specs2-scalacheck" % "4.20.8" % Test,
+  "org.scalacheck" %% "scalacheck" % "1.19.0" % Test
 )
 
-scalacOptions in Test ++= Seq("-Yrangepos")
+// Modern Scala 3 compiler options
+scalacOptions ++= Seq(
+  "-encoding", "utf8",
+  "-deprecation",
+  "-unchecked",
+  "-feature",
+  "-language:higherKinds",
+  "-language:implicitConversions",
+  "-Wunused:all",
+  "-Wvalue-discard",
+  "-Xfatal-warnings"
+)
+
+Test / scalacOptions ++= Seq(
+  "-Wconf:msg=unused:s"  // Suppress unused warnings in tests
+)

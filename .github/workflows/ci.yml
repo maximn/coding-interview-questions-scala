@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [17, 21]
+        scala: [3.3.6]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: ${{ matrix.java }}
+        cache: 'sbt'
+
+    - name: Run tests
+      run: sbt clean coverage test coverageReport
+
+    - name: Upload coverage reports to Codecov
+      if: matrix.java == '17'
+      uses: codecov/codecov-action@v4
+      with:
+        files: ./target/scala-3.3.6/scoverage-report/scoverage.xml
+        fail_ci_if_error: false
+        verbose: true
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Check formatting
+      if: matrix.java == '17'
+      run: sbt scalafmtCheckAll
+
+    - name: Cache SBT
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.ivy2/cache
+          ~/.sbt
+        key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt', 'project/plugins.sbt', 'project/build.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-sbt-

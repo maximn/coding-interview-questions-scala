@@ -2,8 +2,10 @@ logLevel := Level.Warn
 
 resolvers += Classpaths.sbtPluginReleases
 
-addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.0.9")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "2.2.2")
 
-addSbtPlugin("org.scoverage" % "sbt-coveralls" % "1.3.11")
+addSbtPlugin("org.scoverage" % "sbt-coveralls" % "1.3.14")
 
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.4")
 
+addSbtPlugin("com.github.sbt" % "sbt-ci-release" % "1.9.2")

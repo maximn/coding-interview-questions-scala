@@ -14,7 +14,7 @@ class TwoSumTest extends Specification {
     val arrayUtils = new TwoSum
 
     def sumTo(sum: Int): Matcher[(Int, Int)] = (_: (Int, Int)) match {
-      case (a, b) => a + b must be_===(sum)
+      case (a, b) => a + b must be_==(sum)
     }
   }
 
