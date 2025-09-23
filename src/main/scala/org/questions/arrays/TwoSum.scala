@@ -4,7 +4,8 @@ import scala.annotation.tailrec
 import scala.collection.immutable.HashSet
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 30-Oct-2015
  */
 class TwoSum {

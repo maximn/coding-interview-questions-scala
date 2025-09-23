@@ -2,9 +2,9 @@ package org.questions.arrays
 
 import org.specs2.mutable.Specification
 
-
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 28-Oct-2015
  */
 trait ArrayMaxSumNonConsecutiveTest extends Specification {

@@ -1,7 +1,8 @@
 package org.questions.fill
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 27-Oct-2015
  */
 trait Canvas {
@@ -11,7 +12,6 @@ trait Canvas {
 
   def getSize: (Int, Int)
 }
-
 
 class CharsCanvas(canvas: Array[Array[Char]] = Array.fill[Char](5, 5)('.')) extends Canvas {
   require(canvas.length > 0)

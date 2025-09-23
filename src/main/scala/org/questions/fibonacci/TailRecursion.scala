@@ -3,7 +3,8 @@ package org.questions.fibonacci
 import scala.annotation.tailrec
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 26-Oct-2015
  */
 class TailRecursion extends Fibonacci {

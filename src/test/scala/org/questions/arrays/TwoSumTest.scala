@@ -5,7 +5,8 @@ import org.specs2.mutable.Specification
 import org.specs2.specification.Scope
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 30-Oct-2015
  */
 class TwoSumTest extends Specification {

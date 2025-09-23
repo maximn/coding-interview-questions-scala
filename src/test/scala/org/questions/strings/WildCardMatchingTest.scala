@@ -3,12 +3,12 @@ package org.questions.strings
 import org.specs2.mutable.Specification
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 14-Nov-2015
  */
 class WildCardMatchingTest extends Specification {
   val matcher = new WildCardMatching
-
 
   "same string" should {
     "be matching" in {

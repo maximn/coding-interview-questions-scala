@@ -3,7 +3,8 @@ package org.questions.arrays
 import scala.annotation.tailrec
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 30-Oct-2015
  */
 trait LongestIncreasing {
@@ -28,11 +29,11 @@ class LongestIncreasingRecursive extends LongestIncreasing {
 
   @tailrec
   private def increasingSeq(seq: Seq[Int], res: Seq[Int] = Nil): Seq[Int] = seq match {
-    case head :: (tail@Seq(next, _*)) =>
+    case head :: (tail @ Seq(next, _*)) =>
       if (head < next) increasingSeq(tail, res :+ head)
       else res :+ head
     case Seq(single) => res :+ single
-    case _ => res
+    case _           => res
   }
 }
 
@@ -40,20 +41,19 @@ class LongestIncreasingIterative extends LongestIncreasing {
   def findLongestIncreasing(seq: Seq[Int]): Seq[Int] = {
     require(seq.nonEmpty)
 
-    var localLongest = Seq[Int](seq.head)
+    var localLongest  = Seq[Int](seq.head)
     var globalLongest = Seq[Int]()
     def setGlobalFromLonger(): Unit = {
       globalLongest = Seq(localLongest, globalLongest).maxBy(_.length)
     }
 
     for (i <- seq.indices.drop(1)) {
-      val prev = seq(i - 1)
+      val prev    = seq(i - 1)
       val current = seq(i)
 
       if (prev < current) {
         localLongest = localLongest :+ current
-      }
-      else {
+      } else {
         setGlobalFromLonger()
         localLongest = Seq(current)
       }
