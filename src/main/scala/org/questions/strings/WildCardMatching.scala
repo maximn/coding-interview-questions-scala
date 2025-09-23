@@ -1,11 +1,12 @@
 package org.questions.strings
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 14-Nov-2015
  */
 class WildCardMatching {
-  private val matchOnce = '?'
+  private val matchOnce       = '?'
   private val matchZeroOrMany = '*'
 
   def isMatching(str: String, pattern: String): Boolean =

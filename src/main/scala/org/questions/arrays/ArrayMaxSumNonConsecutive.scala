@@ -3,7 +3,8 @@ package org.questions.arrays
 import scala.annotation.tailrec
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 28-Oct-2015
  */
 trait ArrayMaxSumNonConsecutive {
@@ -12,12 +13,12 @@ trait ArrayMaxSumNonConsecutive {
 
 class Recursive extends ArrayMaxSumNonConsecutive {
   def maxSum(numbers: Seq[Int]): Int = numbers match {
-    case Nil => 0
-    case Seq(n) => n
+    case Nil       => 0
+    case Seq(n)    => n
     case Seq(a, b) => Math.max(a, b)
     case head :: tail =>
       val currentAndSkipOne = head + maxSum(tail.tail)
-      val skipCurrent = maxSum(tail)
+      val skipCurrent       = maxSum(tail)
       Math.max(currentAndSkipOne, skipCurrent)
   }
 }
@@ -44,7 +45,7 @@ class DynamicProgrammingImmutable extends ArrayMaxSumNonConsecutive {
   override def maxSum(numbers: Seq[Int]): Int = {
     @tailrec
     def inner(numbers: Seq[Int], inclusive: Int, exclusive: Int): Int = numbers match {
-      case Nil => math.max(inclusive, exclusive)
+      case Nil          => math.max(inclusive, exclusive)
       case head :: tail => inner(numbers.tail, numbers.head + exclusive, inclusive)
     }
 

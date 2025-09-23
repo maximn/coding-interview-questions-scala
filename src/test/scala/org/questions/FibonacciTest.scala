@@ -9,7 +9,8 @@ import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, Future}
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 26-Oct-2015
  */
 trait FibonacciTest extends Specification with FibonacciProperty {
@@ -23,19 +24,19 @@ trait FibonacciTest extends Specification with FibonacciProperty {
 
   "0th" should {
     "be 0" in {
-      fib.nth(0) must be_===(0)
+      fib.nth(0) must be_==(0)
     }
   }
 
   "1st" should {
     "be 1" in {
-      fib.nth(1) must be_===(1)
+      fib.nth(1) must be_==(1)
     }
   }
 
   "2nd" should {
     "be 1" in {
-      fib.nth(2) must be_===(1)
+      fib.nth(2) must be_==(1)
     }
   }
 }
@@ -59,13 +60,12 @@ trait BigN {
 trait FibonacciProperty extends ScalaCheck {
   self: FibonacciTest =>
 
-  val smallInteger = Gen.choose[Int](2,30)
+  val smallInteger = Gen.choose[Int](2, 30)
 
-  "fib(n)" should {
-    "be equal to the sum of the results of last 2 elements" >> prop { n: Int =>
-      fib.nth(n) must be_===(fib.nth(n - 1) + fib.nth(n - 2))
+  "fib(n)" should
+    "be equal to the sum of the results of last 2 elements" >> prop { (n: Int) =>
+      fib.nth(n) must be_==(fib.nth(n - 1) + fib.nth(n - 2))
     }.setGen(smallInteger)
-  }
 }
 
 class RecursiveTest extends FibonacciTest {

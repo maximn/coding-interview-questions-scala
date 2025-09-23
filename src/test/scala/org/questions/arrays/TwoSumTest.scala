@@ -5,7 +5,8 @@ import org.specs2.mutable.Specification
 import org.specs2.specification.Scope
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 30-Oct-2015
  */
 class TwoSumTest extends Specification {
@@ -14,7 +15,7 @@ class TwoSumTest extends Specification {
     val arrayUtils = new TwoSum
 
     def sumTo(sum: Int): Matcher[(Int, Int)] = (_: (Int, Int)) match {
-      case (a, b) => a + b must be_===(sum)
+      case (a, b) => a + b must be_==(sum)
     }
   }
 

@@ -1,17 +1,17 @@
 package org.questions.fill
 
 /**
- * @author maximn
+ * @author
+ *   maximn
  * @since 27-Oct-2015
  */
 trait Canvas {
   def getColor(x: Int, y: Int): Char
 
-  def setColor(x: Int, y: Int, color: Char)
+  def setColor(x: Int, y: Int, color: Char): Unit
 
   def getSize: (Int, Int)
 }
-
 
 class CharsCanvas(canvas: Array[Array[Char]] = Array.fill[Char](5, 5)('.')) extends Canvas {
   require(canvas.length > 0)
