@@ -74,7 +74,7 @@ The project uses a trait-based testing approach:
 ## CI/CD
 
 - GitHub Actions workflow runs on all pull requests to master
-- Tests run on Java 17 and 21 with Scala 3.3.6
+- Tests run on Java 17, 21, and 24 with Scala 3.3.6
 - Code coverage reports are uploaded to Codecov
 - Scalafmt formatting checks ensure consistent code style
 - SBT dependencies are cached for faster builds

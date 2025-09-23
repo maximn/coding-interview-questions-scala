@@ -4,6 +4,7 @@ scala:
 jdk:
    - openjdk17
    - openjdk21
+   - openjdk24
 script:
    - sbt clean coverage test
    - sbt coverageReport
