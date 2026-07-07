@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Setup Java and SBT
       uses: actions/setup-java@v4
@@ -33,7 +33,7 @@ jobs:
       uses: sbt/setup-sbt@v1
 
     - name: Cache SBT
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: |
           ~/.ivy2/cache
