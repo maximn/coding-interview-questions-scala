@@ -1,7 +1,7 @@
 package org.questions.fill
 
 import org.specs2.mutable.Specification
-import org.specs2.specification.Scope
+import org.specs2.execute.Scope
 
 /**
  * @author
