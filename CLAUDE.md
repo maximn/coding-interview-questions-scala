@@ -9,7 +9,7 @@ This is a Scala coding interview questions repository with solutions and compreh
 ## Build System
 
 - **Build Tool**: sbt 1.11.5 (Scala Build Tool)
-- **Scala Version**: 3.3.6 LTS
+- **Scala Version**: 3.3.8 LTS
 - **Test Framework**: Specs2 4.20.8 with ScalaCheck 1.19.0 for property-based testing
 
 ## Common Commands
@@ -74,7 +74,7 @@ The project uses a trait-based testing approach:
 ## CI/CD
 
 - GitHub Actions workflow runs on all pull requests to master
-- Tests run on Java 17, 21, and 24 with Scala 3.3.6
+- Tests run on Java 25 (latest LTS) with Scala 3.3.8
 - Code coverage reports are uploaded to Codecov
 - Scalafmt formatting checks ensure consistent code style
 - SBT dependencies are cached for faster builds
