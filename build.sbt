@@ -2,7 +2,7 @@ name := "coding-interview-questions"
 
 version := "2.0.0"
 
-scalaVersion := "3.3.8"
+scalaVersion := "3.8.4"
 
 libraryDependencies ++= Seq(
   "org.specs2" %% "specs2-core" % "4.23.0" % Test,
@@ -20,7 +20,7 @@ scalacOptions ++= Seq(
   "-language:implicitConversions",
   "-Wunused:all",
   "-Wvalue-discard",
-  "-Xfatal-warnings"
+  "-Werror"
 )
 
 Test / scalacOptions ++= Seq(
