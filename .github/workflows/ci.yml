@@ -44,7 +44,7 @@ jobs:
           ${{ runner.os }}-sbt-
 
     - name: Run tests
-      run: sbt ++${{ matrix.scala }} clean coverage test coverageReport
+      run: sbt "++${{ matrix.scala }}; clean; coverage; test; coverageReport"
 
     - name: TestGlance
       if: always() && matrix.java == '25'
