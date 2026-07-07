@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [17, 21, 24]
+        java: [25]
         scala: [3.3.8]
 
     steps:
@@ -44,26 +44,26 @@ jobs:
           ${{ runner.os }}-sbt-
 
     - name: Run tests
-      run: sbt clean coverage test coverageReport
+      run: sbt ++${{ matrix.scala }} clean coverage test coverageReport
 
     - name: TestGlance
-      if: always() && matrix.java == '17'
+      if: always() && matrix.java == '25'
       uses: testglance/action@5df28a307a187d790e347600464dd04cf42a12ba # v1
       with:
         github-token: ${{ github.token }}
         report-path: '**/target/test-reports/TEST-*.xml'
 
     - name: Upload coverage reports to Codecov
-      if: matrix.java == '17'
+      if: matrix.java == '25'
       uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7
       with:
-        files: ./target/scala-3.3.8/scoverage-report/scoverage.xml
+        files: ./target/scala-${{ matrix.scala }}/scoverage-report/scoverage.xml
         fail_ci_if_error: false
         verbose: true
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Check formatting
-      if: matrix.java == '17'
+      if: matrix.java == '25'
       run: sbt scalafmtCheckAll
 
