@@ -12,7 +12,7 @@ class Iterative extends Fibonacci {
     var current = 0
     var last    = 1
 
-    for (i <- 0 until n) {
+    for (_ <- 0 until n) {
       val temp = current
       current = last
       last = current + temp

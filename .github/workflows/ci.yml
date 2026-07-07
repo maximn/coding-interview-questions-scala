@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         java: [17, 21, 24]
-        scala: [3.3.6]
+        scala: [3.3.8]
 
     steps:
     - name: Checkout code
@@ -57,7 +57,7 @@ jobs:
       if: matrix.java == '17'
       uses: codecov/codecov-action@v4
       with:
-        files: ./target/scala-3.3.6/scoverage-report/scoverage.xml
+        files: ./target/scala-3.3.8/scoverage-report/scoverage.xml
         fail_ci_if_error: false
         verbose: true
       env:
