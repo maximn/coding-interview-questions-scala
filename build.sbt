@@ -2,7 +2,7 @@ name := "coding-interview-questions"
 
 version := "2.0.0"
 
-scalaVersion := "3.3.6"
+scalaVersion := "3.3.8"
 
 libraryDependencies ++= Seq(
   "org.specs2" %% "specs2-core" % "4.20.8" % Test,
