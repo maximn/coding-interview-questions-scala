@@ -18,9 +18,9 @@ trait ArrayMaxSumNonConsecutive {
 
 class Recursive extends ArrayMaxSumNonConsecutive {
   def maxSum(numbers: Seq[Int]): Int = numbers match {
-    case Nil       => 0
-    case Seq(n)    => n
-    case Seq(a, b) => Math.max(a, b)
+    case Nil          => 0
+    case Seq(n)       => n
+    case Seq(a, b)    => Math.max(a, b)
     case head :: tail =>
       val currentAndSkipOne = head + maxSum(tail.tail)
       val skipCurrent       = maxSum(tail)
