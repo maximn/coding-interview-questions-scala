@@ -51,13 +51,13 @@ jobs:
       uses: testglance/action@257d6825154548f970e85566f7c19a48eb7a2ea3 # v1
       with:
         github-token: ${{ github.token }}
-        report-path: '**/target/test-reports/TEST-*.xml'
+        report-path: '**/test-reports/TEST-*.xml'
 
     - name: Upload coverage reports to Codecov
       if: matrix.java == '17'
       uses: codecov/codecov-action@v7
       with:
-        files: ./target/scala-3.3.8/scoverage-report/scoverage.xml
+        files: ./target/out/jvm/scala-3.8.4/coding-interview-questions/scoverage-report/scoverage.xml
         fail_ci_if_error: false
         verbose: true
       env:
