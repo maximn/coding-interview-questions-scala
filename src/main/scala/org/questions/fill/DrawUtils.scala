@@ -26,9 +26,8 @@ class DrawUtils(canvas: Canvas) {
     }
   }
 
-  private def isInCanvas(x: Int, y: Int): Boolean =
-    (x >= 0) &&
-      (y >= 0) &&
-      (x < canvas.getSize._1) &&
-      (y < canvas.getSize._2)
+  private def isInCanvas(x: Int, y: Int): Boolean = (x >= 0) &&
+    (y >= 0) &&
+    (x < canvas.getSize._1) &&
+    (y < canvas.getSize._2)
 }

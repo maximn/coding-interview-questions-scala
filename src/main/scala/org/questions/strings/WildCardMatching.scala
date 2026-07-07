@@ -14,7 +14,7 @@ class WildCardMatching {
 
   private def isMatchingSeq(str: Seq[Char], pattern: Seq[Char]): Boolean = {
     (str, pattern) match {
-      case (Nil, Nil) => true
+      case (Nil, Nil)                                                               => true
       case (sHead :: sTail, pHead :: pTail) if sHead == pHead || pHead == matchOnce =>
         isMatchingSeq(sTail, pTail)
       case (_ :: sTail, pHead :: pTail) if pHead == matchZeroOrMany =>

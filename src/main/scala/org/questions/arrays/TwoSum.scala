@@ -13,7 +13,7 @@ class TwoSum {
 
     @tailrec
     def inner(seq: Seq[Int], hash: HashSet[Int]): Option[(Int, Int)] = seq match {
-      case Nil => None
+      case Nil          => None
       case head :: tail =>
         val lookingFor = sum - head
         if (hash.contains(lookingFor))
