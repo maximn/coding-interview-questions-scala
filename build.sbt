@@ -20,7 +20,7 @@ scalacOptions ++= Seq(
   "-language:implicitConversions",
   "-Wunused:all",
   "-Wvalue-discard",
-  "-Xfatal-warnings"
+  "-Werror"
 )
 
 Test / scalacOptions ++= Seq(
