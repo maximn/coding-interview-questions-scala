@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:best-practices",
+    ":dependencyDashboard"
+  ],
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates once required CI checks pass",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "description": "Keep major updates as manual PRs for human review",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    }
   ]
 }
