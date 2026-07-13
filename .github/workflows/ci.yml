@@ -48,7 +48,7 @@ jobs:
 
     - name: TestGlance
       if: always() && matrix.java == '25'
-      uses: testglance/action@db2b7171252ae70b36e3220a5de55d4b296bbbfd # v1
+      uses: testglance/action@c02e0f85e8ae459b8027fae307dd89c55e2158fa # v1
       with:
         github-token: ${{ github.token }}
         report-path: '**/test-reports/TEST-*.xml'
