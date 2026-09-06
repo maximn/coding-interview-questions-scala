@@ -7,7 +7,7 @@ scalaVersion := "3.3.8"
 libraryDependencies ++= Seq(
   "org.specs2" %% "specs2-core" % "5.9.1" % Test,
   "org.specs2" %% "specs2-scalacheck" % "5.9.1" % Test,
-  "org.scalacheck" %% "scalacheck" % "1.19.0" % Test
+  "org.scalacheck" %% "scalacheck" % "1.20.0" % Test
 )
 
 // Modern Scala 3 compiler options
